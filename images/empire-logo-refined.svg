@@ -1,0 +1,32 @@
+<svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Empire Beauty Space">
+  <defs>
+    <style>
+      .ink { fill: #221812; font-family: 'Fraunces', Georgia, 'Times New Roman', serif; }
+      .accent { fill: #b85a2e; }
+      .script { fill: #96461f; font-family: 'Petit Formal Script', cursive; }
+    </style>
+  </defs>
+
+  <!-- Monogram -->
+  <text x="185" y="290" class="ink" font-weight="600" font-size="280" text-anchor="middle">E</text>
+  <text x="350" y="292" class="ink" font-weight="600" font-size="264" text-anchor="middle">B</text>
+  <rect x="260" y="148" width="15" height="15" class="accent" transform="rotate(45 267 155)"/>
+
+  <!-- Script accent -->
+  <text x="300" y="332" class="script" font-size="50" text-anchor="middle" transform="rotate(-3 300 332)">Empire Beauty</text>
+
+  <!-- Wordmark -->
+  <text x="300" y="405" class="ink" font-weight="600" font-size="52" text-anchor="middle" style="letter-spacing:0.22em">EMPIRE</text>
+
+  <!-- Divider -->
+  <g stroke="#b85a2e" stroke-width="2">
+    <line x1="205" y1="428" x2="270" y2="428"/>
+    <line x1="330" y1="428" x2="395" y2="428"/>
+  </g>
+  <rect x="292" y="420" width="16" height="16" class="accent" transform="rotate(45 300 428)"/>
+
+  <text x="300" y="465" class="ink" font-weight="500" font-size="30" text-anchor="middle" style="letter-spacing:0.3em">BEAUTY SPACE</text>
+
+  <!-- Flourish -->
+  <path d="M240 494 Q270 509 300 494 Q330 509 360 494" fill="none" stroke="#b85a2e" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

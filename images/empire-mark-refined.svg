@@ -1,0 +1,12 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Empire Beauty Space monogram">
+  <defs>
+    <style>
+      .ink { fill: #221812; font-family: 'Fraunces', Georgia, 'Times New Roman', serif; }
+      .accent { fill: #b85a2e; }
+    </style>
+  </defs>
+  <circle cx="250" cy="250" r="248" fill="#fffdf9" stroke="#7c4a28" stroke-opacity="0.3" stroke-width="2"/>
+  <text x="160" y="305" class="ink" font-weight="600" font-size="220" text-anchor="middle">E</text>
+  <text x="300" y="307" class="ink" font-weight="600" font-size="208" text-anchor="middle">B</text>
+  <rect x="228" y="180" width="13" height="13" class="accent" transform="rotate(45 234 186)"/>
+</svg>
