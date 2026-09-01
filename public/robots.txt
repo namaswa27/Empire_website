@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Replace REPLACE_WITH_PRODUCTION_DOMAIN below with the real deployed
+# domain once one is chosen (see CONTENT_MANAGEMENT.md).
+Sitemap: https://REPLACE_WITH_PRODUCTION_DOMAIN/sitemap.xml

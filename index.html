@@ -1,341 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Empire Beauty Space — Beauty & Wellness in Nakuru</title>
-<meta name="description" content="Empire Beauty Space is a premium beauty destination in Nakuru offering skincare, bodycare, makeup and beauty treatments. Book an appointment or get in touch today." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empire Beauty Space — Beauty & Wellness in Nakuru</title>
+    <meta name="description" content="Empire Beauty Space is a premium beauty destination in Nakuru offering skincare, bodycare, makeup and beauty treatments. Explore services, browse products, or request an appointment." />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Empire Beauty Space — Where Beauty Meets Confidence" />
-<meta property="og:description" content="Discover Empire Beauty Space, Nakuru's premium beauty destination. Explore services and book an appointment." />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="en_KE" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Empire Beauty Space — Where Beauty Meets Confidence" />
+    <meta property="og:description" content="Discover Empire Beauty Space, Nakuru's premium beauty destination. Explore services and products, or request an appointment." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_KE" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Petit+Formal+Script&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Petit+Formal+Script&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<link rel="apple-touch-icon" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/favicon.png" />
 
-<link rel="stylesheet" href="styles.css" />
-
-<!-- Local Business structured data for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BeautySalon",
-  "name": "Empire Beauty Space",
-  "telephone": "+254728864460",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maombini Plaza, Kenyatta Avenue, G16",
-    "addressLocality": "Nakuru",
-    "addressCountry": "KE"
-  },
-  "sameAs": [
-    "https://instagram.com/empire_beauty_space",
-    "https://www.tiktok.com/@empire.beauty.space"
-  ]
-}
-</script>
-</head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="container nav">
-    <a href="#home" class="brand">
-      <img src="images/empire-mark-refined.svg" alt="" class="brand-mark" width="40" height="40" />
-      <span>Empire Beauty Space</span>
-    </a>
-
-    <nav aria-label="Primary">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <a href="#booking" class="btn btn--primary nav-cta">Book Appointment</a>
-
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="visually-hidden">Toggle menu</span>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-    <a href="#booking" class="btn btn--primary">Book Appointment</a>
-  </nav>
-</header>
-
-<main id="main">
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Nakuru · Maombini Plaza</span>
-        <h1>Empire Beauty Space</h1>
-        <p class="subhead">Where beauty meets confidence.</p>
-        <p class="lede">A premium beauty space offering skincare, bodycare and makeup services — book an appointment or explore what we offer.</p>
-        <div class="hero-actions">
-          <a href="#booking" class="btn btn--primary">Book an Appointment</a>
-          <a href="#services" class="btn btn--outline">Explore Our Services</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        <img src="images/empire-logo-refined.svg" alt="Empire Beauty Space logo" class="hero-logo" />
-        <p class="placeholder-note">Real studio/treatment photography can replace this panel once provided.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="rule container" />
-
-  <!-- WHY CHOOSE US -->
-  <section class="section" aria-labelledby="why-heading">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Why Empire Beauty Space</span>
-        <h2 id="why-heading">A beauty experience built around you</h2>
-      </div>
-      <div class="value-grid">
-        <div class="value-item">
-          <span class="num">I.</span>
-          <h3>Personal attention</h3>
-          <p>Every treatment is tailored to you — from consultation through aftercare.</p>
-        </div>
-        <div class="value-item">
-          <span class="num">II.</span>
-          <h3>A trusted local space</h3>
-          <p>Conveniently located at Maombini Plaza on Kenyatta Avenue, Nakuru.</p>
-        </div>
-        <div class="value-item">
-          <span class="num">III.</span>
-          <h3>Simple booking</h3>
-          <p>Request an appointment online and we'll confirm the details with you directly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section section--panel" id="about" aria-labelledby="about-heading">
-    <div class="container about-grid">
-      <div>
-        <span class="eyebrow">About Us</span>
-        <h2 id="about-heading">Get to know Empire Beauty Space</h2>
-        <div id="aboutIntro">
-          <!-- Filled by app.js from config; shows an honest empty state if not yet provided -->
-        </div>
-      </div>
-      <div>
-        <div class="about-card">
-          <h3>Our mission</h3>
-          <p id="aboutMission">To be added — share your mission statement and it will appear here.</p>
-        </div>
-        <div class="about-card">
-          <h3>Our vision</h3>
-          <p id="aboutVision">To be added — share your vision statement and it will appear here.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section" id="services" aria-labelledby="services-heading">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Services</span>
-        <h2 id="services-heading">Explore our beauty services</h2>
-        <p>Browse by category. Full details, pricing and duration are added here as services are confirmed.</p>
-      </div>
-
-      <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Service categories"></div>
-      <div id="serviceContent"></div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section section--panel" id="gallery" aria-labelledby="gallery-heading">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Gallery</span>
-        <h2 id="gallery-heading">A look inside Empire Beauty Space</h2>
-      </div>
-      <div id="galleryContent"></div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section" aria-labelledby="testimonials-heading">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Testimonials</span>
-        <h2 id="testimonials-heading">What clients say</h2>
-      </div>
-      <div id="testimonialContent"></div>
-    </div>
-  </section>
-
-  <!-- SOCIAL -->
-  <section class="section section--tight section--panel" aria-labelledby="social-heading">
-    <div class="container">
-      <div class="section-head" style="margin-bottom:1.5rem;">
-        <span class="eyebrow">Follow Along</span>
-        <h2 id="social-heading">Stay connected with Empire Beauty Space</h2>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn--outline" href="https://instagram.com/empire_beauty_space" target="_blank" rel="noopener">Instagram · @empire_beauty_space</a>
-        <a class="btn btn--outline" href="https://www.tiktok.com/@empire.beauty.space" target="_blank" rel="noopener">TikTok · @empire.beauty.space</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT + BOOKING -->
-  <section class="section" id="contact" aria-labelledby="contact-heading">
-    <div class="container contact-layout">
-
-      <div>
-        <span class="eyebrow">Visit or Reach Us</span>
-        <h2 id="contact-heading">Contact & Location</h2>
-        <div class="contact-panel" style="margin-top:1.75rem;">
-
-          <div class="contact-item">
-            <span class="contact-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" stroke="currentColor" stroke-width="1.4"/></svg>
-            </span>
-            <div>
-              <div class="label">Phone</div>
-              <a class="value" href="tel:+254728864460">0728 864 460</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <span class="contact-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.3A7 7 0 0 0 5 9.7C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.4"/></svg>
-            </span>
-            <div>
-              <div class="label">Location</div>
-              <div class="value">Maombini Plaza, Kenyatta Avenue<br />G16, Nakuru</div>
-              <a class="value" style="display:inline-block;margin-top:0.5rem;font-size:0.85rem;text-decoration:underline;" href="https://www.google.com/maps/search/?api=1&query=Maombini%20Plaza%20Kenyatta%20Avenue%20Nakuru" target="_blank" rel="noopener">Get Directions →</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <span class="contact-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.4"/></svg>
-            </span>
-            <div>
-              <div class="label">Instagram &amp; TikTok</div>
-              <div class="value">@empire_beauty_space · @empire.beauty.space</div>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <span class="contact-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-            </span>
-            <div>
-              <div class="label">Business Hours</div>
-              <div class="value" id="hoursValue">Coming soon — hours will be listed here once confirmed.</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div id="booking">
-        <div class="form-card">
-          <h3 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:0.35rem;">Request an appointment</h3>
-          <p class="form-note">We'll contact you to confirm your appointment — no payment is required to submit a request.</p>
-
-          <div class="form-status" id="bookingStatus" role="status"></div>
-
-          <form id="bookingForm" novalidate>
-            <div class="field-row">
-              <div class="field">
-                <label for="bk-name">Full name <span class="required">*</span></label>
-                <input type="text" id="bk-name" name="name" autocomplete="name" required />
-                <div class="field-error">Please enter your name.</div>
-              </div>
-              <div class="field">
-                <label for="bk-phone">Phone number <span class="required">*</span></label>
-                <input type="tel" id="bk-phone" name="phone" autocomplete="tel" required />
-                <div class="field-error">Please enter a valid phone number.</div>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="bk-email">Email (optional)</label>
-              <input type="email" id="bk-email" name="email" autocomplete="email" />
-              <div class="field-error">Please enter a valid email address.</div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="bk-service">Service <span class="required">*</span></label>
-                <select id="bk-service" name="service" required>
-                  <option value="">Select a service</option>
-                  <option value="general">General enquiry — not sure yet</option>
-                </select>
-                <div class="field-error">Please select a service.</div>
-              </div>
-              <div class="field">
-                <label for="bk-date">Preferred date <span class="required">*</span></label>
-                <input type="date" id="bk-date" name="date" required />
-                <div class="field-error">Please choose a valid, future date.</div>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="bk-time">Preferred time</label>
-              <input type="time" id="bk-time" name="time" />
-            </div>
-
-            <div class="field">
-              <label for="bk-message">Message (optional)</label>
-              <textarea id="bk-message" name="message" rows="3"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">Request Appointment</button>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <p style="margin:0; display:flex; align-items:center; gap:0.6rem;">
-      <img src="images/empire-mark-refined.svg" alt="" width="24" height="24" style="border-radius:50%;" />
-      © <span id="year"></span> Empire Beauty Space. All rights reserved.
-    </p>
-    <ul class="footer-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</footer>
-
-<script src="config.js"></script>
-<script src="app.js"></script>
-</body>
+    <!-- Local Business structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Empire Beauty Space",
+      "telephone": "+254728864460",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Maombini Plaza, Kenyatta Avenue, G16",
+        "addressLocality": "Nakuru",
+        "addressCountry": "KE"
+      },
+      "sameAs": [
+        "https://instagram.com/empire_beauty_space",
+        "https://www.tiktok.com/@empire.beauty.space"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

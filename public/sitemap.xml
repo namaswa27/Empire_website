@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Replace REPLACE_WITH_PRODUCTION_DOMAIN with the real deployed domain
+  once one is chosen. See CONTENT_MANAGEMENT.md. Add a <url> entry per
+  service/product once real slugs exist in src/data/services.ts and
+  src/data/products.ts, if you want them individually indexed.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://REPLACE_WITH_PRODUCTION_DOMAIN/</loc></url>
+  <url><loc>https://REPLACE_WITH_PRODUCTION_DOMAIN/about</loc></url>
+  <url><loc>https://REPLACE_WITH_PRODUCTION_DOMAIN/services</loc></url>
+  <url><loc>https://REPLACE_WITH_PRODUCTION_DOMAIN/products</loc></url>
+  <url><loc>https://REPLACE_WITH_PRODUCTION_DOMAIN/gallery</loc></url>
+  <url><loc>https://REPLACE_WITH_PRODUCTION_DOMAIN/contact</loc></url>
+</urlset>
