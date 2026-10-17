@@ -1,0 +1,118 @@
+# Decap CMS configuration for the owner's content editor at /admin.
+# Products are stored as one JSON file per product in content/products/.
+# Photos are uploaded through the media library into product-photos/<slug>/
+# and are published by the build step (npm run images:products).
+#
+# BEFORE GO-LIVE: replace YOUR-SITE-DOMAIN below with the live site origin,
+# for example https://www.example.co.ke (no trailing slash).
+backend:
+  name: github
+  repo: namaswa27/Empire_website
+  branch: main
+  base_url: https://YOUR-SITE-DOMAIN
+  auth_endpoint: api/auth
+
+# Used for uploads that are not tied to a product.
+media_folder: "/product-photos"
+public_folder: "/product-photos"
+
+publish_mode: simple
+
+collections:
+  - name: products
+    label: Products
+    label_singular: Product
+    folder: content/products
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{name}} ({{categoryId}})"
+    sortable_fields: ["name", "featured", "active"]
+    fields:
+      - label: "URL name (slug)"
+        name: slug
+        widget: string
+        required: true
+        hint: "Lowercase letters, numbers and hyphens only, for example hydrating-body-lotion. Photos go in product-photos/<this name>/."
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Use lowercase letters, numbers and hyphens only"]
+      - label: "Product name"
+        name: name
+        widget: string
+      - label: "Brand"
+        name: brand
+        widget: string
+        required: false
+      - label: "Category"
+        name: categoryId
+        widget: select
+        options:
+          - { label: "Skincare", value: "prod-skincare" }
+          - { label: "Bodycare", value: "prod-bodycare" }
+          - { label: "Makeup", value: "prod-makeup" }
+          - { label: "Haircare", value: "prod-haircare" }
+          - { label: "Beauty Accessories", value: "prod-accessories" }
+          - { label: "Other", value: "prod-other" }
+      - label: "Short description"
+        name: shortDescription
+        widget: text
+        required: false
+        hint: "One or two sentences shown on product cards."
+      - label: "Full description"
+        name: description
+        widget: text
+        required: false
+      - label: "Price (KSh)"
+        name: price
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: "Leave empty if the price is on request."
+      - label: "Price display"
+        name: priceDisplayMode
+        widget: select
+        default: fixed
+        options:
+          - { label: "Fixed price", value: "fixed" }
+          - { label: "From price", value: "from" }
+          - { label: "Price on request", value: "on_request" }
+      - label: "Size"
+        name: size
+        widget: string
+        required: false
+        hint: "For example 250ml."
+      - label: "Benefits"
+        name: benefits
+        widget: list
+        required: false
+        default: []
+      - label: "Ingredients"
+        name: ingredients
+        widget: text
+        required: false
+      - label: "How to use"
+        name: usageInstructions
+        widget: text
+        required: false
+      - label: "Suitable for"
+        name: suitableFor
+        widget: string
+        required: false
+      - label: "Featured on homepage"
+        name: featured
+        widget: boolean
+        default: false
+      - label: "Visible on the website"
+        name: active
+        widget: boolean
+        default: true
+        hint: "Turn off to hide the product without deleting it."
+      - label: "Photos"
+        name: photo_library
+        widget: image
+        required: false
+        media_folder: "/product-photos/{{slug}}"
+        public_folder: "/product-photos/{{slug}}"
+        hint: "Click 'Choose an image' to open the library. Upload photos here, or delete them there. Name files 01-front.jpg, 02-side.jpg so they display in that order. Leave this field empty; the photos show automatically."

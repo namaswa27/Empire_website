@@ -18,7 +18,7 @@ each example can be copy-pasted and adjusted.
 | `src/data/business.ts` | Business name, phone, WhatsApp, address, social handles, hours, about/mission/vision |
 | `src/data/categories.ts` | Service categories and product categories |
 | `src/data/services.ts` | Every service (the Services page, homepage "Featured Services", and the appointment form's dropdown all read from this file) |
-| `src/data/products.ts` | Every product (the Products page and homepage "Featured Products" read from this file) |
+| `content/products/*.json` | Every product, one file each. Edit them in the admin at `/admin` (see **Products and photos in the admin**) |
 | `src/data/gallery.ts` | Gallery photos |
 | `src/data/testimonials.ts` | Client testimonials |
 | `src/data/faqs.ts` | FAQ entries shown on the Contact page |
@@ -81,48 +81,41 @@ in the homepage "Featured Services" section.
 
 ---
 
-## Add / edit / remove a product
+## Products and photos in the admin
 
-Same pattern in `src/data/products.ts`:
+Products are managed at **`/admin`** on the live website. Log in with the GitHub account that has access to the repository.
 
-```ts
-{
-  id: "prod-hydrating-body-lotion",
-  name: "Hydrating Body Lotion",
-  slug: "hydrating-body-lotion",
-  brand: "Empire Care",
-  categoryId: "prod-bodycare",         // must match an id in categories.ts
-  shortDescription: "Lightweight daily hydration.",
-  description: "Full description shown on the product's own page.",
-  price: 1200,                         // number in KSh, or omit for "enquire for price"
-  priceDisplayMode: "fixed",
-  size: "250ml",
-  image: "/images/products/hydrating-body-lotion.jpg",
-  benefits: ["24h hydration", "Non-greasy"],
-  ingredients: "Aqua, Glycerin, ...",
-  usageInstructions: "Apply after shower.",
-  suitableFor: "All skin types",
-  featured: true,
-  active: true,
-},
-```
+**Add a product:** open **Products → New Products**, fill in the form, and click **Publish**. Then upload its photos (below).
 
-Products never show a "Buy" or "Add to Cart" button — every product
-page shows an "Enquire" action instead, which opens a WhatsApp
-message (or email, if no WhatsApp number is set) addressed to Empire
-Beauty Space with the product name pre-filled.
+**Edit a product:** open **Products**, click the product, change the fields, and click **Publish**.
 
----
+**Hide a product** without deleting it: switch off **Visible on the website**.
 
-## Change a product/service image
+**Delete a product:** open it and use the delete option in the top bar. Its photos are removed from the site on the next publish.
 
-1. Add the image file to `public/images/services/` or
-   `public/images/products/`.
-2. Set that entry's `image` field to `/images/services/your-file.jpg`
-   (or `/images/products/...`).
+**Prices:** enter the price in KSh. Use **Price display** for "Fixed price", "From price" or "Price on request". Leave the price empty for "on request".
 
-Keep images reasonably sized (under ~500KB) for fast page loads —
-compress them before adding, e.g. with [Squoosh](https://squoosh.app).
+**Categories** come from a fixed list in the form. New categories need a developer.
+
+Products never show a "Buy" or "Add to Cart" button; every product offers an "Enquire" action instead.
+
+After you publish, the website rebuilds automatically. This usually takes 1–3 minutes.
+
+## Product photos in the admin
+
+1. Open the product in **/admin**.
+2. In the **Photos** field, click **Choose an image**. This opens the media library.
+3. Upload the photos for that product. They are saved to the product's own folder automatically.
+4. Name files so they show in the order you want: `01-front.jpg`, `02-side.jpg`, `03-label.png`. The first photo is the main photo on product cards.
+5. Click **Publish**.
+
+To remove a photo, open the library from the same field, select the photo, and delete it. Then publish again.
+
+Photos must be JPEG, PNG or WebP, and up to 5 MB each. Files that are too large or the wrong type are rejected. The website keeps the photos it already has if a new upload fails. A rejected photo is reported in the build log, which a developer can check. Your other photos still publish.
+
+Hidden photo information such as location data is removed automatically.
+
+**For developers:** photos are processed by `npm run images:products`, which runs before each build on Vercel. You can also run it locally after adding photos to `product-photos/<slug>/`.
 
 ## Change prices
 

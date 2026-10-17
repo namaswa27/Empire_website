@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import type { Product } from "../data/products";
 import { productCategoryName } from "../utils/catalog";
 import { formatPrice } from "../utils/contact";
+import ProductImage, { PRODUCT_IMAGE_SIZES } from "./ProductImage";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link to={`/products/${product.slug}`} className="catalog-card">
       <div className="thumb">
-        {product.image ? <img src={product.image} alt="" loading="lazy" /> : "Image coming soon"}
+        <ProductImage product={product} sizes={PRODUCT_IMAGE_SIZES.card} className="thumb-media" />
         {product.featured ? <span className="featured-flag">Featured</span> : null}
       </div>
       <div className="body">

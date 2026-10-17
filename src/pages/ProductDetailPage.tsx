@@ -1,5 +1,7 @@
 import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 import { useDocumentMeta } from "../hooks/useDocumentMeta";
+import ProductImage, { PRODUCT_IMAGE_SIZES, getProductPhotos } from "../components/ProductImage";
 import { getProductBySlug, productCategoryName } from "../utils/catalog";
 import { formatPrice, bestEnquiryLink } from "../utils/contact";
 import NotFoundPage from "./NotFoundPage";
@@ -7,6 +9,8 @@ import NotFoundPage from "./NotFoundPage";
 export default function ProductDetailPage() {
   const { slug = "" } = useParams();
   const product = getProductBySlug(slug);
+  const [activePhoto, setActivePhoto] = useState(0);
+  const photos = product ? getProductPhotos(product.slug) : [];
 
   useDocumentMeta({
     title: product ? (product.seoTitle || product.name) : "Product not found",
@@ -24,14 +28,27 @@ export default function ProductDetailPage() {
 
         <div className="detail-layout">
           <div>
-            <img
+            <ProductImage
+              product={product}
+              index={activePhoto}
+              sizes={PRODUCT_IMAGE_SIZES.detail}
+              eager
               className="detail-image"
-              src={product.image || "/images/empire-mark-refined.svg"}
-              alt={product.image ? product.name : ""}
             />
-            {product.gallery && product.gallery.length ? (
-              <div className="detail-gallery">
-                {product.gallery.map((src, i) => <img key={i} src={src} alt="" loading="lazy" />)}
+            {photos.length > 1 ? (
+              <div className="detail-gallery" role="group" aria-label="Product photos">
+                {photos.map((photo, i) => (
+                  <button
+                    key={photo.id}
+                    type="button"
+                    className="detail-gallery-button"
+                    aria-pressed={i === activePhoto}
+                    aria-label={`Show photo ${i + 1} of ${photos.length}`}
+                    onClick={() => setActivePhoto(i)}
+                  >
+                    <ProductImage product={product} index={i} sizes={PRODUCT_IMAGE_SIZES.thumb} className="detail-gallery-media" />
+                  </button>
+                ))}
               </div>
             ) : null}
           </div>

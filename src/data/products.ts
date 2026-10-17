@@ -6,9 +6,7 @@
  * app. Every product card links to an "Enquire" action instead of
  * "Buy". See CONTENT_MANAGEMENT.md for how to add/edit products.
  *
- * Intentionally empty: no invented products. Add real entries here
- * as Empire Beauty Space confirms its product lineup.
- * ---------------------------------------------------------------
+ * Intentionally empty: no invented products. Products are added in /admin.
  */
 
 export interface Product {
@@ -35,4 +33,13 @@ export interface Product {
   seoDescription?: string;
 }
 
-export const products: Product[] = [];
+/**
+ * Products are edited in the owner admin at /admin and stored as one JSON
+ * file per product in content/products/ (the file name is the slug).
+ */
+const productFiles = import.meta.glob<Omit<Product, "id">>("../../content/products/*.json", {
+  eager: true,
+  import: "default",
+});
+
+export const products: Product[] = Object.values(productFiles).map((p) => ({ ...p, id: p.slug }));
