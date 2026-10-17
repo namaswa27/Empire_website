@@ -9,7 +9,7 @@ backend:
   name: github
   repo: namaswa27/Empire_website
   branch: main
-  base_url: https://YOUR-SITE-DOMAIN
+  base_url: https://empire-website-qypl.vercel.app
   auth_endpoint: api/auth
 
 # Used for uploads that are not tied to a product.
